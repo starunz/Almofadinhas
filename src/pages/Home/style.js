@@ -7,6 +7,7 @@ const Container = styled.div`
     flex-direction: column;
 
     //background-color: #FF69B4;
+    width: 100%;
 
 `
 
