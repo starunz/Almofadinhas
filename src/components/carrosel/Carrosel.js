@@ -36,10 +36,10 @@ const View1 = () => {
 
 export const Multi = () => (
    <Grommet theme={theme}>
-    <Box style={{margin:20}}>
-        <Carousel play={3000}>
-        <View0 />
-        <View1 />
+    <Box style={{margin:60}} >
+        <Carousel play={3000} controls={false}>
+          <View0 />
+          <View1 />
         </Carousel>
     </Box>
   </Grommet>

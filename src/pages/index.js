@@ -1,10 +1,7 @@
-import SignUp from "./signUp/SignUp";
-import Login from "./login/Login";
 import Home from "./Home";
+import { PageONG } from "./PageONG/PageONG";
 
 export {
-    SignUp,
-    Login,
     Home,
+    PageONG
 }
-

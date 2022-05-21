@@ -32,9 +32,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    background-color: #fff;
-    /*background-image: url('../assets/images/back.png');*/
-    background-size: 400px 400px;
+    background-color: #a6a6a6;
+    background-image: url('../assets/patinhas3.png');
+    /*background-size: 500px 500px ;*/
 }
 ol, ul {
     list-style: none;

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-import { Box, Page, PageContent } from 'grommet';
+import { Page, PageContent } from 'grommet';
 
 const Container = styled(Page)`
     width: 100%;
-    color: #FF69B4;
+    color: #fff;
+
+    margin-top: 50px;
 `
 
 const PageContainer = styled(PageContent)`

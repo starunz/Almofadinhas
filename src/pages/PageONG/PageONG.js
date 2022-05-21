@@ -7,7 +7,7 @@ import { Infos } from '../../components/infos/Infos';
 export const PageONG = () => (
     <Grommet theme={theme}>
         <Container kind="narrow">
-            <PageContainer background="#a6a6a6">
+            <PageContainer background="#fff">
                 <Heading>Nome da ONG</Heading>
                 
                 <Paragraph>
