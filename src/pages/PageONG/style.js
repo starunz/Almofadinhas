@@ -6,7 +6,7 @@ const Container = styled(Page)`
     width: 100%;
     color: #fff;
 
-    margin-top: 50px;
+    margin: 50px 0 50px 0;
 `
 
 const PageContainer = styled(PageContent)`
