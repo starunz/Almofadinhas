@@ -4,6 +4,7 @@ import { Box, Tab, Tabs, Grommet } from 'grommet';
 import { Favorite, Group, Schedule } from 'grommet-icons';
 
 import { FormDonation } from '../form/form';
+import { SocialInfo } from '../socialInfo/socialInfo';
 
 export const Infos = () => (
     <Grommet theme={theme}>
@@ -14,7 +15,7 @@ export const Infos = () => (
                 </Tab>
 
                 <Tab title="Contatos" icon={<Group />}>
-                    <Box margin="small">Redes sociais</Box>
+                    <SocialInfo/>
                 </Tab>
 
                 <Tab title="Eventos" icon={<Schedule />}>

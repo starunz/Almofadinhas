@@ -70,8 +70,7 @@ export const FormDonation = () => {
                         onReset={() => {}}
                         onSubmit={({ value }) => handleSubmit(value)}
                         onValidate={(validationResults) => {
-                        console.log('validationResults = ', validationResults);
-                        setValid(validationResults.valid);
+                            setValid(validationResults.valid);
                         }}
                     >
                         <FormField style={{border:'#FF69B4'}}

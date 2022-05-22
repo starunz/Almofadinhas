@@ -9,7 +9,7 @@ export const ControlBottomMenu = () => {
     const navigate = useNavigate();
 
     return(
-        <Grommet thome={theme}>
+        <Grommet theme={theme}>
             <Menu color={'#FF69B4'}
                 dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
                 label="ONGs"
