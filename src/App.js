@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { 
     Home,
-    PageONG
+    PagePatinhaCarente,
+    PageAmorAnimal
 } from "./pages";
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={< Home />} />
-                <Route path='/ong' element={<PageONG />} />
+                <Route path='/ong/patinhacarente' element={<PagePatinhaCarente />} />
+                <Route path='/ong/amoranimal' element={<PageAmorAnimal />} />
             </Routes>
         </BrowserRouter>
 );

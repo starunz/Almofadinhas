@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Menu , Grommet } from 'grommet';
-import { Home, Group} from 'grommet-icons';
+import { Group } from 'grommet-icons';
 
 
 export const ControlBottomMenu = () => {
@@ -14,8 +14,8 @@ export const ControlBottomMenu = () => {
                 dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
                 label="ONGs"
                 items={[
-                    { label: 'Patinha Carente', icon: <Group color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong')}},
-                    { label: 'ONG2', icon: <Group color={'#FF69B4'}/>,  gap: 'small', onClick: () => {} },
+                    { label: 'Patinha Carente', icon: <Group color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong/patinhacarente')}},
+                    { label: 'Amor Animal', icon: <Group color={'#FF69B4'}/>,  gap: 'small', onClick: () => {navigate('/ong/amoranimal')}},
                 ]}
             />
         </Grommet>

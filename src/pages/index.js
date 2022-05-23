@@ -1,7 +1,9 @@
 import Home from "./Home";
-import { PageONG } from "./PageONG/PageONG";
+import { PagePatinhaCarente } from "./PageONG/PatinhaCarente";
+import { PageAmorAnimal } from "./PageONG/AmorAnimal";
 
 export {
     Home,
-    PageONG
+    PagePatinhaCarente,
+    PageAmorAnimal
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Carousel, Grommet, Card, Grid } from 'grommet';
 
 const data = [
-  'Doar',
+  'ue 1',
   'ue 2',
   'ue3',
   'ue 4',

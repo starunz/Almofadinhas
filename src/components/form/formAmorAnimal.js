@@ -19,7 +19,7 @@ const allSuggestions = Array(20)
 .fill()
 .map((_, i) => `R$ ${i + 1}`);
 
-export const FormDonation = () => {
+export const FormDonationAmorAnimal = () => {
     const [code, setCode] = useState('')
     const [hasCode, SetHasCode] = useState(false)
 
@@ -60,7 +60,7 @@ export const FormDonation = () => {
     const handleSubmit = (value) => {
         Object.assign(value, {
             amount: textInput.current.value,
-            id: 'PatinhaCarente',
+            id: 'Amor Animal',
             city: 'Rio Branco',
         })
 
@@ -100,7 +100,7 @@ export const FormDonation = () => {
                                 <FormField style={{border:'#FF69B4'}}
                                     label="Chave Pix"
                                     name="keyPix"
-                                    value={'21.614.179/0001-47'}
+                                    value={'054.423.822-21'}
                                     required
                                     validate={() => {}}
                                 />
@@ -108,7 +108,7 @@ export const FormDonation = () => {
                                 <FormField
                                     label="Nome do beneficiário"
                                     name="nameOng"
-                                    value={'Patinha Carente'}
+                                    value={'Fernanda Évelyn Leite De Oliveira'}
                                     required
                                     validate={[
                                     { regexp: /^[a-z]/i },

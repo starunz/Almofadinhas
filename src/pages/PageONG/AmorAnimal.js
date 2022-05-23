@@ -2,13 +2,13 @@ import React from 'react';
 import { Heading, Grommet, Paragraph } from 'grommet';
 import { Container, PageContainer } from './style';
 
-import { Infos } from '../../components/infos/Infos';
+import { Infos } from '../../components/infos/infosAmorAnimal';
 
-export const PageONG = () => (
+export const PageAmorAnimal = () => (
     <Grommet theme={theme}>
         <Container kind="narrow">
             <PageContainer background="#fff">
-                <Heading>Patinha Carente</Heading>
+                <Heading>Amor Animal</Heading>
                 
                 <Paragraph>
                     História

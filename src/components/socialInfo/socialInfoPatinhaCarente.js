@@ -11,7 +11,7 @@ import {
     MailOption
 } from 'grommet-icons';
 
-export const SocialInfo = () => (
+export const SocialInfoPatinhaCarente = () => (
      <Grommet theme={theme}>
         <Container>
             <Anchor 
