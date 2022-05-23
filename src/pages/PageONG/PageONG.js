@@ -8,7 +8,7 @@ export const PageONG = () => (
     <Grommet theme={theme}>
         <Container kind="narrow">
             <PageContainer background="#fff">
-                <Heading>Nome da ONG</Heading>
+                <Heading>Patinha Carente</Heading>
                 
                 <Paragraph>
                     História

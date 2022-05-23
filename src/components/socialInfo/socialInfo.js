@@ -7,26 +7,22 @@ import {
 } from 'grommet';
 
 import {
-    Instagram
+    Instagram,
+    MailOption
 } from 'grommet-icons';
 
 export const SocialInfo = () => (
      <Grommet theme={theme}>
         <Container>
             <Anchor 
-                href="#" 
+                href="https://instagram.com/patinhacarente" 
                 icon={<Instagram/>} 
-                label="Instagram" 
+                label="patinhacarente" 
             />
             <Anchor 
-                href="#" 
-                icon={<Instagram/>} 
-                label="Instagram" 
-            />
-            <Anchor 
-                href="#" 
-                icon={<Instagram/>} 
-                label="Instagram" 
+                href="mailto:ong.patinha.carente@gmail.com" 
+                icon={<MailOption/>} 
+                label="ong.patinha.carente@gmail.com" 
             />
         </Container>
     </Grommet>

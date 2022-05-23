@@ -33,6 +33,7 @@ export const FooterMenu = () => (
             <Container background="light-4" pad="small" kind="full">
                 <Box align="center" direction="row" gap="xsmall">
                     <ControlBottomMenu/>
+                    <Box>Eventos</Box>
                 </Box>
                 <Media />
             </Container>

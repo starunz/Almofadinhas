@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Menu , Grommet } from 'grommet';
-import {  User } from 'grommet-icons';
+import { Home, Group} from 'grommet-icons';
 
 
 export const ControlBottomMenu = () => {
@@ -14,9 +14,8 @@ export const ControlBottomMenu = () => {
                 dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
                 label="ONGs"
                 items={[
-                    { label: 'ONG1', icon: <User color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong')}},
-                    { label: 'ONG2', onClick: () => {} },
-                    { label: 'ONG3', onClick: () => {} },
+                    { label: 'Patinha Carente', icon: <Group color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong')}},
+                    { label: 'ONG2', icon: <Group color={'#FF69B4'}/>,  gap: 'small', onClick: () => {} },
                 ]}
             />
         </Grommet>
@@ -27,17 +26,13 @@ const theme = {
     global: {
         colors: {
             brand: '#FF69B4',
-            icon: '#FF69B4',
-            label: '#FF69B4',
-        },
-        label: {
-            color: '#FF69B4',
         },
 
         font: {
             family: 'Roboto',
-            size: '18px',
+            size: '20px',
             height: '20px',
+            weight:'bold'
         },
     },
 };

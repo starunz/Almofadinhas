@@ -54,7 +54,8 @@ export const FormDonation = () => {
     const handleSubmit = (value) => {
         Object.assign(value, {
             amount: textInput.current.value,
-            id: 1
+            id: 1,
+            city: 'Rio Branco'
         })
         console.log(value)
     }
@@ -76,16 +77,9 @@ export const FormDonation = () => {
                         <FormField style={{border:'#FF69B4'}}
                             label="Chave Pix"
                             name="keyPix"
-                            value={'04704865207'}
+                            value={'21.614.179/0001-47'}
                             required
-                            validate={[
-                            { regexp: /^[0-9]*$/ },
-                            (number) => {
-                              if (number && number.length > 11) 
-                              return 'Apenas 11 números';
-                              return undefined;
-                            }, 
-                            ]}
+                            validate={() => {}}
                         />
 
                         <FormField
