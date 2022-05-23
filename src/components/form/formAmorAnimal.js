@@ -22,9 +22,7 @@ const allSuggestions = Array(20)
 export const FormDonationAmorAnimal = () => {
     const [code, setCode] = useState('')
     const [hasCode, SetHasCode] = useState(false)
-
     const [valid, setValid] = useState(false);
-
     const [stateValue, setStateValue] = useState({
         value: '',
         suggestions: allSuggestions,
@@ -145,7 +143,13 @@ export const FormDonationAmorAnimal = () => {
                                         }}
                                     />
                                 </FormField>
-                                <FormField label="Descrição" name="description" component={TextArea} required />
+                                <FormField 
+                                    label="Descrição" 
+                                    name="description" 
+                                    defaultValue='Doação com carinho pelo Almofadinhas 🥰'
+                                    component={TextArea} 
+                                    required 
+                                />
                                 <Box direction="row" justify="between" margin={{ top: 'medium' }}>
                                     <Button label="Cancel" />
                                     <Button type="reset" label="Reset" />
