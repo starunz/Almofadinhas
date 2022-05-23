@@ -1,33 +1,36 @@
 import React from 'react';
 
-import { Grommet, Paragraph, Text } from 'grommet';
-import { Container, PageContainer } from '../../pages/PageONG/style';
+import { 
+    Grommet, 
+    Paragraph, 
+    Text,
+    Box
+} from 'grommet';
 
 export const Sobre = () => (
     <Grommet theme={theme}>
-        <Container kind="narrow">
-            <PageContainer background="#a6a6a6">
-                <Text>
-                    Olá! Bem-vindo(a) à Almofadinhas 🐾 
-                </Text>
-                <Paragraph>
-                    Aqui você pode conhecer ONGs que ajudam animais, doar 
-                    e descobrir onde você pode adotar um amigo de patas :3
-                </Paragraph>
-            </PageContainer>
-        </Container>
+        <Box kind="narrow" background="#a6a6a6">
+            <Text>
+                Olá! Bem-vindo(a) à Almofadinhas 🐾 
+            </Text>
+            <Paragraph>
+                Aqui você pode conhecer ONG que ajudam animais, doar 
+                e descobrir onde você pode adotar um amigo de patas :3
+            </Paragraph>
+
+        </Box>
     </Grommet>
 );
 
 const theme = {
     global: {
         colors: {
-            brand: '#228BE6',
+            brand: '#444444',
         },
 
         font: {
             family: 'Roboto',
-            size: '18px',
+            size: '20px',
             height: '20px',
         },
     },

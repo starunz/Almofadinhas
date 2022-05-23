@@ -7,6 +7,16 @@ const Container = styled(Box)`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    span {
+        color: #444444;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 20px;
+    }
 `
 
 export {

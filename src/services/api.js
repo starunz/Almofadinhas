@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: 'http://localhost:5000' })
+const api = axios.create({ baseURL: process.env.REACT_APP_API_SERVER})
 
 const postDonation = (body) => {
     const promise = api.post('/donation', body);

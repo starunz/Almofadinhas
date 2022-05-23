@@ -8,6 +8,8 @@ const Container = styled(Box)`
     align-items: center;
     justify-content: center;
 
+    margin-bottom: 30px;
+
     background-color: #FF69B4;
 
     @media (max-width: 710px) {
