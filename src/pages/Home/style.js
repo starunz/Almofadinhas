@@ -17,6 +17,15 @@ const Container = styled(Box)`
     p {
         font-size: 20px;
     }
+
+    @media(max-width: 450px) {
+        span {
+            margin-left: 60px;
+        }
+        p {
+            margin-left: 10px;
+        }
+    }
 `
 
 export {

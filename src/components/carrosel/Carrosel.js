@@ -1,24 +1,29 @@
 import React from 'react';
+import amoranimal from '../../assets/amoranimal.PNG'
+import patinhacarente from '../../assets/patinhacarente.png';
+import embreve from '../../assets/embreve4.png';
 
-import { Box, Carousel, Grommet, Card, Grid } from 'grommet';
+import { Box, Carousel, Grommet, Grid } from 'grommet';
+import { CardImg } from './style';
 
 const data = [
-  'ue 1',
-  'ue 2',
-  'ue3',
-  'ue 4',
-  'ue 5',
-  'ue 6',
+  amoranimal,
+  patinhacarente,
+  embreve,
+  amoranimal,
+  patinhacarente,
+  embreve,
 ];
 
 const View0 = () => {
   const imgs = data.slice(0, 3);
   return (
     <Grid rows="small" columns={{ count: 'fit', size: 'small' }} gap="small">
-
-        {imgs.map((img) => (
-            <Card background="white" pad="large">{img}</Card>
-        ))}
+      {imgs.map((img) => (
+          <CardImg background="white" pad="large" align='center' justify='center' style={{padding:0}}>
+            <img key={img} src={img} fit="contain" width='40%' alt='ue' />
+          </CardImg>
+      ))}
     </Grid>
   );
 };
@@ -26,10 +31,11 @@ const View1 = () => {
   const imgs = data.slice(3, 6);
   return (
     <Grid rows="small" columns={{ count: 'fit', size: 'small' }} gap="small">
-
-        {imgs.map((img) => (
-            <Card background="white" pad="large">{img}</Card>
-        ))}
+      {imgs.map((img) => (
+        <CardImg background="white" pad="large" align='center' justify='center' style={{padding:0}}>
+          <img key={img} src={img} fit="contain" width='40%' alt='ue' />
+        </CardImg>
+      ))}
     </Grid>
   );
 };
