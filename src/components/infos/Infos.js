@@ -19,7 +19,9 @@ export const Infos = () => (
                 </Tab>
 
                 <Tab title="Eventos" icon={<Schedule />}>
-                    <Box margin="small">Data, hora e local</Box>
+                    <Box margin="small">
+                        Não existem eventos marcados ainda 😐 mas fique atento 😉
+                    </Box>
                 </Tab>
             </Tabs>
         </Box>

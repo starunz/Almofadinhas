@@ -1,28 +1,13 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: '' })
+const api = axios.create({ baseURL: 'http://localhost:5000' })
 
-const config = (token) => {
-    return {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-}
+const postDonation = (body) => {
+    const promise = api.post('/donation', body);
 
-const signUp = (body) => {
-    const promisse = api.post('/sign-up', body)
-
-    return promisse;
-}
-
-const login = (body) => {
-    const promisse = api.post('/login', body)
-
-    return promisse;
+    return promise;
 }
 
 export {
-    signUp,
-    login,
+    postDonation,
 }

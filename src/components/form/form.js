@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef} from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 
 import { Container } from './style';
 import { 
@@ -10,6 +10,8 @@ import {
     TextArea, 
     TextInput 
 } from 'grommet';
+
+import * as api from '../../services/api'
 
 const allSuggestions = Array(20)
 .fill()
@@ -54,12 +56,21 @@ export const FormDonation = () => {
     const handleSubmit = (value) => {
         Object.assign(value, {
             amount: textInput.current.value,
-            id: 1,
+            id: '1',
             city: 'Rio Branco'
         })
+        const body = value
         console.log(value)
-    }
 
+        const promise = api.postDonation(body)
+        promise.then( (response) => {
+            console.log('deu bom ue')
+            console.log(response.data)
+        }).catch((err) =>{
+            console.log(err)
+        }) 
+    }
+    
     const onSelect = (event) => setStateValue({ ...stateValue, value: event.R$ });
 
     return (
@@ -122,7 +133,7 @@ export const FormDonation = () => {
                                 }}
                             />
                         </FormField>
-                        <FormField label="Descrição" name="Description" component={TextArea} />
+                        <FormField label="Descrição" name="description" component={TextArea} />
                         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
                             <Button label="Cancel" />
                             <Button type="reset" label="Reset" />
