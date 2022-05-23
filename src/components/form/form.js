@@ -8,16 +8,22 @@ import {
     FormField, 
     Grommet, 
     TextArea, 
-    TextInput 
+    TextInput,
+    Text
 } from 'grommet';
 
 import * as api from '../../services/api'
+
+import { QRCode } from 'qrcode';
 
 const allSuggestions = Array(20)
 .fill()
 .map((_, i) => `R$ ${i + 1}`);
 
 export const FormDonation = () => {
+    const [code, setCode] = useState('')
+    const [hasCode, SetHasCode] = useState(false)
+
     const [valid, setValid] = useState(false);
 
     const [stateValue, setStateValue] = useState({
@@ -42,7 +48,6 @@ export const FormDonation = () => {
     const handleKeyUp = useCallback( (event) => {
         let newValue = event.currentTarget.value;
 
-        newValue = newValue.replace('R$', 'R$');
         newValue = newValue.replace(/\D/g, '');
         newValue = newValue.replace(/(\d)(\d{2})$/, '$1,$2');
         newValue = newValue.replace(/(?=(\d{3})+(\D))\B/g, '.');
@@ -56,8 +61,8 @@ export const FormDonation = () => {
     const handleSubmit = (value) => {
         Object.assign(value, {
             amount: textInput.current.value,
-            id: '1',
-            city: 'Rio Branco'
+            id: 'PatinhaCarente',
+            city: 'Rio Branco',
         })
         const body = value
         console.log(value)
@@ -65,7 +70,9 @@ export const FormDonation = () => {
         const promise = api.postDonation(body)
         promise.then( (response) => {
             console.log('deu bom ue')
-            console.log(response.data)
+            console.log(response.data.qrcode_payload);
+            setCode(response.data.qrcode_payload);
+            SetHasCode(true)
         }).catch((err) =>{
             console.log(err)
         }) 
@@ -77,69 +84,78 @@ export const FormDonation = () => {
         <Grommet theme={theme}>
             <Container fill align="center" justify="center">
                 <Box width="medium">
-                    <Form 
-                        validate="change"
-                        onReset={() => {}}
-                        onSubmit={({ value }) => handleSubmit(value)}
-                        onValidate={(validationResults) => {
-                            setValid(validationResults.valid);
-                        }}
-                    >
-                        <FormField style={{border:'#FF69B4'}}
-                            label="Chave Pix"
-                            name="keyPix"
-                            value={'21.614.179/0001-47'}
-                            required
-                            validate={() => {}}
-                        />
+                    {
+                        !hasCode ? 
 
-                        <FormField
-                            label="Nome do beneficiário"
-                            name="nameOng"
-                            value={'Patinha Carente'}
-                            required
-                            validate={[
-                            { regexp: /^[a-z]/i },
-                            (lastName) => {
-                                if (lastName && lastName.length === 1)
-                                return 'Nome de usuário deve conter mais de 1 caracter';
-                                return undefined;
-                            },
-                            ]}
-                        />
-                        <FormField 
-                            label="Valor para transferência"
-                            name="select-value"
-                            htmlFor="text-input"
-                            validate={()=> {}}
-                        >
-                            <TextInput 
-                                id="text-input"
-                                ref={textInput}
-                                value={stateValue.value}
-                                onChange={onChange}
-                                onSelect={onSelect}
-                                onKeyUp={handleKeyUp}
-                                suggestions={stateValue.suggestions}
-                                required
-                                validate={() => {
-                                    if (textInput.current.value === '') {
-                                        return { 
-                                            message: 'Preencha com o valor desejado', 
-                                            status: 'info' 
-                                        };
-                                    }
-                                    return;
+                            <Form 
+                                validate="change"
+                                onReset={() => {}}
+                                onSubmit={({ value }) => handleSubmit(value)}
+                                onValidate={(validationResults) => {
+                                    setValid(validationResults.valid);
                                 }}
-                            />
-                        </FormField>
-                        <FormField label="Descrição" name="description" component={TextArea} />
-                        <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-                            <Button label="Cancel" />
-                            <Button type="reset" label="Reset" />
-                            <Button type="submit" label="Update" disabled={!valid} primary/>
+                            >
+                                <FormField style={{border:'#FF69B4'}}
+                                    label="Chave Pix"
+                                    name="keyPix"
+                                    value={'21.614.179/0001-47'}
+                                    required
+                                    validate={() => {}}
+                                />
+
+                                <FormField
+                                    label="Nome do beneficiário"
+                                    name="nameOng"
+                                    value={'Patinha Carente'}
+                                    required
+                                    validate={[
+                                    { regexp: /^[a-z]/i },
+                                    (lastName) => {
+                                        if (lastName && lastName.length === 1)
+                                        return 'Nome de usuário deve conter mais de 1 caracter';
+                                        return undefined;
+                                    },
+                                    ]}
+                                />
+                                <FormField 
+                                    label="Valor para transferência"
+                                    name="select-value"
+                                    htmlFor="text-input"
+                                    validate={()=> {}}
+                                >
+                                    <TextInput 
+                                        id="text-input"
+                                        ref={textInput}
+                                        value={stateValue.value}
+                                        onChange={onChange}
+                                        onSelect={onSelect}
+                                        onKeyUp={handleKeyUp}
+                                        suggestions={stateValue.suggestions}
+                                        required
+                                        validate={() => {
+                                            if (textInput.current.value === '') {
+                                                return { 
+                                                    message: 'Preencha com o valor desejado', 
+                                                    status: 'info' 
+                                                };
+                                            }
+                                            return;
+                                        }}
+                                    />
+                                </FormField>
+                                <FormField label="Descrição" name="description" component={TextArea} required />
+                                <Box direction="row" justify="between" margin={{ top: 'medium' }}>
+                                    <Button label="Cancel" />
+                                    <Button type="reset" label="Reset" />
+                                    <Button type="submit" label="Update" disabled={!valid} primary/>
+                                </Box>
+                            </Form>
+                        :
+                        <Box>
+                            <Text>Entre no seu aplicativo de banco e na área pix escaneie o QRCode 🤓</Text>
+                            <img src={code} alt='qrcode'/>
                         </Box>
-                    </Form>
+                    }
                 </Box>
             </Container>
         </Grommet>
