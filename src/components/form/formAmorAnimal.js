@@ -23,6 +23,9 @@ export const FormDonationAmorAnimal = () => {
     const [code, setCode] = useState('')
     const [hasCode, SetHasCode] = useState(false)
     const [valid, setValid] = useState(false);
+    const [suggestion, setSuggestion] = useState(
+        'Doação com carinho pelo Almofadinhas 😻'
+    )
     const [stateValue, setStateValue] = useState({
         value: '',
         suggestions: allSuggestions,
@@ -146,7 +149,7 @@ export const FormDonationAmorAnimal = () => {
                                 <FormField 
                                     label="Descrição" 
                                     name="description" 
-                                    defaultValue='Doação com carinho pelo Almofadinhas 😻'
+                                    defaultValue={suggestion}
                                     component={TextArea} 
                                     required 
                                 />

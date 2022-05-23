@@ -1,13 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Heading, Grommet, Paragraph, Box } from 'grommet';
-import { Container, PageContainer, Logo, LogoPatinha } from './style';
+import { Heading, Grommet, Paragraph } from 'grommet';
+import { Container, PageContainer, LogoPatinha } from './style';
 import { InfosPatinhaCarente } from '../../components/infos/InfosPatinhaCarente';
 
 import { Home } from 'grommet-icons';
 
-import amoranimal from '../../assets/amoranimal.PNG'
 import patinhacarente from '../../assets/patinhacarente.png';
 
 export const PagePatinhaCarente = () => {
