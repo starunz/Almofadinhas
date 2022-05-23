@@ -14,8 +14,8 @@ export const ControlBottomMenu = () => {
                 dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
                 label="ONGs"
                 items={[
-                    { label: 'Patinha Carente', icon: <Group color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong/patinhacarente')}},
                     { label: 'Amor Animal', icon: <Group color={'#FF69B4'}/>,  gap: 'small', onClick: () => {navigate('/ong/amoranimal')}},
+                    { label: 'Patinha Carente', icon: <Group color={'#FF69B4'}/>, gap: 'small', onClick: () => {navigate('/ong/patinhacarente')}},
                 ]}
             />
         </Grommet>

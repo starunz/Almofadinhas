@@ -145,7 +145,13 @@ export const FormDonationPatinhaCarente = () => {
                                         }}
                                     />
                                 </FormField>
-                                <FormField label="Descrição" name="description" component={TextArea} required />
+                                <FormField 
+                                    label="Descrição" 
+                                    name="description" 
+                                    defaultValue='Doação com carinho pelo Almofadinhas 😻'
+                                    component={TextArea} 
+                                    required 
+                                />
                                 <Box direction="row" justify="between" margin={{ top: 'medium' }}>
                                     <Button label="Cancel" />
                                     <Button type="reset" label="Reset" />

@@ -1,48 +1,40 @@
 import React from 'react';
-import { Heading, Grommet, Paragraph } from 'grommet';
-import { Container, PageContainer } from './style';
+import { useNavigate } from 'react-router-dom';
 
+import { Heading, Grommet, Paragraph, Box } from 'grommet';
+import { Container, PageContainer, Logo, LogoPatinha } from './style';
 import { InfosPatinhaCarente } from '../../components/infos/InfosPatinhaCarente';
 
-export const PagePatinhaCarente = () => (
-    <Grommet theme={theme}>
-        <Container kind="narrow">
-            <PageContainer background="#fff">
-                <Heading>Patinha Carente</Heading>
-                
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
-                <Paragraph>
-                    História
-                </Paragraph>
+import { Home } from 'grommet-icons';
 
-                <InfosPatinhaCarente/>
-            </PageContainer>
-        </Container>
+import amoranimal from '../../assets/amoranimal.PNG'
+import patinhacarente from '../../assets/patinhacarente.png';
+
+export const PagePatinhaCarente = () => {
+    const navigate = useNavigate()
+
+    return(
+        <Grommet theme={theme}>
+            <Container kind="narrow">
+                <PageContainer background="#fff">
+                    <LogoPatinha justify='between' direction='row' align='center'>
+                        <img src={patinhacarente} alt='amoranimal' width='100px'/>
+                        <Home color={'#FF69B4'} size='40px' onClick={() => {navigate('/')}}/>
+                    </LogoPatinha>
+
+                    <Heading>Patinha Carente</Heading>
+                    
+                    <Paragraph textAlign='justify' text-justify='inter-word'>
+                        A ONG Patinha Carente teve início em 2013 e desde
+                        então vem ajudando nossos amiguinhos de patas! 
+                    </Paragraph>
+
+                    <InfosPatinhaCarente/>
+                </PageContainer>
+            </Container>
     </Grommet>
-);
+    )
+};
 
 const theme = {
     global: {

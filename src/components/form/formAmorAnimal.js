@@ -146,7 +146,7 @@ export const FormDonationAmorAnimal = () => {
                                 <FormField 
                                     label="Descrição" 
                                     name="description" 
-                                    defaultValue='Doação com carinho pelo Almofadinhas 🥰'
+                                    defaultValue='Doação com carinho pelo Almofadinhas 😻'
                                     component={TextArea} 
                                     required 
                                 />
