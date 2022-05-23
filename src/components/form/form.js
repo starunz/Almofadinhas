@@ -11,10 +11,9 @@ import {
     TextInput,
     Text
 } from 'grommet';
+import Swal from 'sweetalert2';
 
-import * as api from '../../services/api'
-
-import { QRCode } from 'qrcode';
+import * as api from '../../services/api';
 
 const allSuggestions = Array(20)
 .fill()
@@ -64,17 +63,20 @@ export const FormDonation = () => {
             id: 'PatinhaCarente',
             city: 'Rio Branco',
         })
-        const body = value
-        console.log(value)
+
+        const body = value;
 
         const promise = api.postDonation(body)
         promise.then( (response) => {
-            console.log('deu bom ue')
-            console.log(response.data.qrcode_payload);
             setCode(response.data.qrcode_payload);
             SetHasCode(true)
-        }).catch((err) =>{
-            console.log(err)
+
+        }).catch(() =>{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ocorreu um erro inesperado 😐 tente novamente 😉'
+            });
         }) 
     }
     
@@ -161,7 +163,6 @@ export const FormDonation = () => {
         </Grommet>
     );
 };
-
 
 const theme = {
     global: {
